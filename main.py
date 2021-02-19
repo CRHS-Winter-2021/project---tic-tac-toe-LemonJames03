@@ -3,7 +3,7 @@ import sys
 
 done = 0
 turn = 0
-theBoard = []
+theBoard = ['blank', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 
 
@@ -35,9 +35,7 @@ def play():
  
     while move not in ['1','2','3','4','5','6','7','8','9']  or  theBoard[int(move)] != ' ':
       print('Can not do that')
-      move = (input('Where would you like to make your move ')
- 
-      
+      move = (input('Where would you like to make your move '))
     theBoard[int(move)] = letter
     
     printBoard()
@@ -74,11 +72,12 @@ def main():
   print("The board is relative to the number pad on your key board")
     
   first = input('Player1 type 1 if you would like to be x and 2 for o ')
-  while first != 1 and first != 2:
-    input('You need to put 1 or 2.\n Type 1 for x and 2 for o')  
-    if first == '2':
+  while first != str(1) and first != str(2):
+    first = input('You need to put 1 or 2.\nType 1 for x and 2 for o ')  
+  
+  if first == '2':
       turn += 1
-    theBoard = ['blank', '', '', '', '', '', '', '', '', '']
+      theBoard = ['blank', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
     
 main()
